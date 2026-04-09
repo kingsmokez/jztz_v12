@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试股票详情 API</title>
+</head>
+<body>
+    <h1>股票详情 API 测试</h1>
+    <button onclick="testAPI('300015')">测试爱尔眼科</button>
+    <button onclick="testAPI('300760')">测试迈瑞医疗</button>
+    <button onclick="testAPI('600519')">测试贵州茅台</button>
+    
+    <pre id="result" style="background:#f0f0f0;padding:20px;margin-top:20px;"></pre>
+    
+    <script>
+        async function testAPI(code) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = '加载中...';
+            
+            try {
+                const resp = await fetch(`/api/stock_detail?code=${code}`);
+                const data = await resp.json();
+                resultDiv.textContent = JSON.stringify(data, null, 2);
+            } catch (e) {
+                resultDiv.textContent = '错误：' + e.message;
+            }
+        }
+    </script>
+</body>
+</html>

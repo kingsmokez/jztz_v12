@@ -1,0 +1,848 @@
+{
+  "date": "2026-04-10",
+  "morning": {
+    "results": [
+      {
+        "code": "600841",
+        "name": "动力新科",
+        "price": 9.02,
+        "change_pct": -1.2,
+        "pe": 4.36,
+        "pb": 2.53,
+        "roe": 58.03,
+        "gross_margin": 8.274296604844,
+        "net_margin": 50.0389259473,
+        "debt_ratio": 40.6454379668,
+        "rev_growth": -25.4953676542,
+        "profit_growth": 243.6737802774,
+        "market_cap": 94.08,
+        "score": 105,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 20,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 58.0% 优秀",
+          "净利率 50.0% ✓",
+          "成长性 243.7% 优秀",
+          "资产负债率 40.6% ✓健康",
+          "PE 4.4 低估 ✓",
+          "PE 4.4 + ROE 58.0% 现金流充裕 ✓",
+          "市值 94亿"
+        ],
+        "buy_sell": {
+          "current": 9.02,
+          "buy": 8.57,
+          "sell": 16.24,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "688332",
+        "name": "中科蓝讯",
+        "price": 124.69,
+        "change_pct": -3.41,
+        "pe": 10.62,
+        "pb": 3.25,
+        "roe": 30.58,
+        "gross_margin": 22.185408753712,
+        "net_margin": 76.8553703354,
+        "debt_ratio": 7.4241003561,
+        "rev_growth": 1.239185869,
+        "profit_growth": 371.66,
+        "market_cap": 150.37,
+        "score": 103.4,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 18,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 30.6% 优秀",
+          "净利率 76.9% ✓",
+          "成长性 186.4% 优秀",
+          "资产负债率 7.4% ✓健康",
+          "PE 10.6 低估 ✓",
+          "PE 10.6 + ROE 30.6% 现金流充裕 ✓",
+          "市值 150亿"
+        ],
+        "buy_sell": {
+          "current": 124.69,
+          "buy": 118.46,
+          "sell": 224.44,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "603444",
+        "name": "吉比特",
+        "price": 359.02,
+        "change_pct": -3.48,
+        "pe": 14.42,
+        "pb": 4.8,
+        "roe": 33.27,
+        "gross_margin": 93.90138920023,
+        "net_margin": 34.584656529,
+        "debt_ratio": 24.1583554445,
+        "rev_growth": 67.8894040089,
+        "profit_growth": 89.82,
+        "market_cap": 258.64,
+        "score": 102.3,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 17,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 33.3% 优秀",
+          "毛利率 93.9% ✓",
+          "净利率 34.6% ✓",
+          "成长性 78.9% 优秀",
+          "资产负债率 24.2% ✓健康",
+          "PE 14.4 合理",
+          "PE 14.4 + ROE 33.3% 现金流充裕 ✓",
+          "市值 259亿"
+        ],
+        "buy_sell": {
+          "current": 359.02,
+          "buy": 341.07,
+          "sell": 646.24,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "600211",
+        "name": "西藏药业",
+        "price": 42.18,
+        "change_pct": -0.02,
+        "pe": 14.5,
+        "pb": 3.91,
+        "roe": 26.98,
+        "gross_margin": 94.215238926347,
+        "net_margin": 30.7552975964,
+        "debt_ratio": 33.9839537094,
+        "rev_growth": -10.4524803316,
+        "profit_growth": 31.26,
+        "market_cap": 135.95,
+        "score": 102.2,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 17,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 27.0% 优秀",
+          "毛利率 94.2% ✓",
+          "净利率 30.8% ✓",
+          "成长性 31.3% 优秀",
+          "资产负债率 34.0% ✓健康",
+          "PE 14.5 合理",
+          "PE 14.5 + ROE 27.0% 现金流充裕 ✓",
+          "市值 136亿"
+        ],
+        "buy_sell": {
+          "current": 42.18,
+          "buy": 40.07,
+          "sell": 75.92,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "600329",
+        "name": "达仁堂",
+        "price": 41.06,
+        "change_pct": -1.18,
+        "pe": 14.84,
+        "pb": 3.79,
+        "roe": 25.57,
+        "gross_margin": 74.022307540371,
+        "net_margin": 42.9246548084,
+        "debt_ratio": 39.2634207812,
+        "rev_growth": -11.1352598535,
+        "profit_growth": 125.94,
+        "market_cap": 232.85,
+        "score": 102.1,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 17,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 25.6% 优秀",
+          "毛利率 74.0% ✓",
+          "净利率 42.9% ✓",
+          "成长性 125.9% 优秀",
+          "资产负债率 39.3% ✓健康",
+          "PE 14.8 合理",
+          "PE 14.8 + ROE 25.6% 现金流充裕 ✓",
+          "市值 233亿"
+        ],
+        "buy_sell": {
+          "current": 41.06,
+          "buy": 39.01,
+          "sell": 73.91,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "600989",
+        "name": "宝丰能源",
+        "price": 29.63,
+        "change_pct": 3.67,
+        "pe": 19.14,
+        "pb": 4.75,
+        "roe": 24.84,
+        "gross_margin": 35.915921755601,
+        "net_margin": 23.6279438009,
+        "debt_ratio": 46.3243664871,
+        "rev_growth": 45.6439786774,
+        "profit_growth": 79.09,
+        "market_cap": 2172.87,
+        "score": 99.9,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 15,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 24.8% 优秀",
+          "净利率 23.6% ✓",
+          "成长性 62.4% 优秀",
+          "资产负债率 46.3% ✓健康",
+          "PE 19.1 合理",
+          "PE 19.1 + ROE 24.8% 现金流充裕 ✓",
+          "市值 2173亿"
+        ],
+        "buy_sell": {
+          "current": 29.63,
+          "buy": 28.15,
+          "sell": 53.33,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "600660",
+        "name": "福耀玻璃",
+        "price": 57.68,
+        "change_pct": -0.64,
+        "pe": 16.16,
+        "pb": 4.13,
+        "roe": 25.56,
+        "gross_margin": 37.270011816932,
+        "net_margin": 20.3479325266,
+        "debt_ratio": 46.4018008554,
+        "rev_growth": 18.3669408128,
+        "profit_growth": 33.2,
+        "market_cap": 1155.32,
+        "score": 99.3,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 23,
+          "health": 20,
+          "valuation": 16,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 25.6% 优秀",
+          "净利率 20.3% ✓",
+          "成长性 25.8% 优秀",
+          "资产负债率 46.4% ✓健康",
+          "PE 16.2 合理",
+          "PE 16.2 + ROE 25.6% 现金流充裕 ✓",
+          "市值 1155亿"
+        ],
+        "buy_sell": {
+          "current": 57.68,
+          "buy": 54.8,
+          "sell": 103.82,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "603259",
+        "name": "药明康德",
+        "price": 106.19,
+        "change_pct": 2.36,
+        "pe": 16.54,
+        "pb": 5.2,
+        "roe": 28.56,
+        "gross_margin": 47.638710497092,
+        "net_margin": 42.5312288509,
+        "debt_ratio": 22.1809931508,
+        "rev_growth": 15.8371756558,
+        "profit_growth": 102.65,
+        "market_cap": 2626.38,
+        "score": 99.2,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 14,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 28.6% 优秀",
+          "毛利率 47.6% ✓",
+          "净利率 42.5% ✓",
+          "成长性 59.2% 优秀",
+          "资产负债率 22.2% ✓健康",
+          "PE 16.5 合理",
+          "PE 16.5 + ROE 28.6% 现金流充裕 ✓",
+          "市值 2626亿"
+        ],
+        "buy_sell": {
+          "current": 106.19,
+          "buy": 100.88,
+          "sell": 191.14,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "688336",
+        "name": "三生国健",
+        "price": 82.1,
+        "change_pct": -5.27,
+        "pe": 17.5,
+        "pb": 7.23,
+        "roe": 41.32,
+        "gross_margin": 92.070895330228,
+        "net_margin": 68.8681479709,
+        "debt_ratio": 6.0578084598,
+        "rev_growth": 251.8121415003,
+        "profit_growth": 311.49,
+        "market_cap": 506.38,
+        "score": 98.8,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 14,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 41.3% 优秀",
+          "毛利率 92.1% ✓",
+          "净利率 68.9% ✓",
+          "成长性 281.7% 优秀",
+          "资产负债率 6.1% ✓健康",
+          "PE 17.5 合理",
+          "PE 17.5 + ROE 41.3% 现金流充裕 ✓",
+          "市值 506亿"
+        ],
+        "buy_sell": {
+          "current": 82.1,
+          "buy": 77.99,
+          "sell": 147.78,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "002801",
+        "name": "微光股份",
+        "price": 30.72,
+        "change_pct": -1.6,
+        "pe": 19.36,
+        "pb": 3.97,
+        "roe": 20.51,
+        "gross_margin": 30.295319668798,
+        "net_margin": 24.7072876444,
+        "debt_ratio": 16.4506570908,
+        "rev_growth": 4.6759705589,
+        "profit_growth": 65.22,
+        "market_cap": 35.57,
+        "score": 98.3,
+        "dimensions": {
+          "profitability": 34,
+          "growth": 25,
+          "health": 20,
+          "valuation": 15,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 20.5% 优秀",
+          "净利率 24.7% ✓",
+          "成长性 34.9% 优秀",
+          "资产负债率 16.5% ✓健康",
+          "PE 19.4 合理",
+          "PE 19.4 + ROE 20.5% 现金流充裕 ✓",
+          "市值 36亿"
+        ],
+        "buy_sell": {
+          "current": 30.72,
+          "buy": 29.18,
+          "sell": 55.3,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      }
+    ],
+    "total_scanned": 996,
+    "pick_time": "2026-04-10 00:02:49",
+    "session_type": "早盘选股"
+  },
+  "afternoon": {
+    "results": [
+      {
+        "code": "600841",
+        "name": "动力新科",
+        "price": 9.02,
+        "change_pct": -1.2,
+        "pe": 4.36,
+        "pb": 2.53,
+        "roe": 58.03,
+        "gross_margin": 8.274296604844,
+        "net_margin": 50.0389259473,
+        "debt_ratio": 40.6454379668,
+        "rev_growth": -25.4953676542,
+        "profit_growth": 243.6737802774,
+        "market_cap": 94.08,
+        "score": 105,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 20,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 58.0% 优秀",
+          "净利率 50.0% ✓",
+          "成长性 243.7% 优秀",
+          "资产负债率 40.6% ✓健康",
+          "PE 4.4 低估 ✓",
+          "PE 4.4 + ROE 58.0% 现金流充裕 ✓",
+          "市值 94亿"
+        ],
+        "buy_sell": {
+          "current": 9.02,
+          "buy": 8.57,
+          "sell": 16.24,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "688332",
+        "name": "中科蓝讯",
+        "price": 124.69,
+        "change_pct": -3.41,
+        "pe": 10.62,
+        "pb": 3.25,
+        "roe": 30.58,
+        "gross_margin": 22.185408753712,
+        "net_margin": 76.8553703354,
+        "debt_ratio": 7.4241003561,
+        "rev_growth": 1.239185869,
+        "profit_growth": 371.66,
+        "market_cap": 150.37,
+        "score": 103.4,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 18,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 30.6% 优秀",
+          "净利率 76.9% ✓",
+          "成长性 186.4% 优秀",
+          "资产负债率 7.4% ✓健康",
+          "PE 10.6 低估 ✓",
+          "PE 10.6 + ROE 30.6% 现金流充裕 ✓",
+          "市值 150亿"
+        ],
+        "buy_sell": {
+          "current": 124.69,
+          "buy": 118.46,
+          "sell": 224.44,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "603444",
+        "name": "吉比特",
+        "price": 359.02,
+        "change_pct": -3.48,
+        "pe": 14.42,
+        "pb": 4.8,
+        "roe": 33.27,
+        "gross_margin": 93.90138920023,
+        "net_margin": 34.584656529,
+        "debt_ratio": 24.1583554445,
+        "rev_growth": 67.8894040089,
+        "profit_growth": 89.82,
+        "market_cap": 258.64,
+        "score": 102.3,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 17,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 33.3% 优秀",
+          "毛利率 93.9% ✓",
+          "净利率 34.6% ✓",
+          "成长性 78.9% 优秀",
+          "资产负债率 24.2% ✓健康",
+          "PE 14.4 合理",
+          "PE 14.4 + ROE 33.3% 现金流充裕 ✓",
+          "市值 259亿"
+        ],
+        "buy_sell": {
+          "current": 359.02,
+          "buy": 341.07,
+          "sell": 646.24,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "600211",
+        "name": "西藏药业",
+        "price": 42.18,
+        "change_pct": -0.02,
+        "pe": 14.5,
+        "pb": 3.91,
+        "roe": 26.98,
+        "gross_margin": 94.215238926347,
+        "net_margin": 30.7552975964,
+        "debt_ratio": 33.9839537094,
+        "rev_growth": -10.4524803316,
+        "profit_growth": 31.26,
+        "market_cap": 135.95,
+        "score": 102.2,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 17,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 27.0% 优秀",
+          "毛利率 94.2% ✓",
+          "净利率 30.8% ✓",
+          "成长性 31.3% 优秀",
+          "资产负债率 34.0% ✓健康",
+          "PE 14.5 合理",
+          "PE 14.5 + ROE 27.0% 现金流充裕 ✓",
+          "市值 136亿"
+        ],
+        "buy_sell": {
+          "current": 42.18,
+          "buy": 40.07,
+          "sell": 75.92,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "600329",
+        "name": "达仁堂",
+        "price": 41.06,
+        "change_pct": -1.18,
+        "pe": 14.84,
+        "pb": 3.79,
+        "roe": 25.57,
+        "gross_margin": 74.022307540371,
+        "net_margin": 42.9246548084,
+        "debt_ratio": 39.2634207812,
+        "rev_growth": -11.1352598535,
+        "profit_growth": 125.94,
+        "market_cap": 232.85,
+        "score": 102.1,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 17,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 25.6% 优秀",
+          "毛利率 74.0% ✓",
+          "净利率 42.9% ✓",
+          "成长性 125.9% 优秀",
+          "资产负债率 39.3% ✓健康",
+          "PE 14.8 合理",
+          "PE 14.8 + ROE 25.6% 现金流充裕 ✓",
+          "市值 233亿"
+        ],
+        "buy_sell": {
+          "current": 41.06,
+          "buy": 39.01,
+          "sell": 73.91,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "600989",
+        "name": "宝丰能源",
+        "price": 29.63,
+        "change_pct": 3.67,
+        "pe": 19.14,
+        "pb": 4.75,
+        "roe": 24.84,
+        "gross_margin": 35.915921755601,
+        "net_margin": 23.6279438009,
+        "debt_ratio": 46.3243664871,
+        "rev_growth": 45.6439786774,
+        "profit_growth": 79.09,
+        "market_cap": 2172.87,
+        "score": 99.9,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 15,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 24.8% 优秀",
+          "净利率 23.6% ✓",
+          "成长性 62.4% 优秀",
+          "资产负债率 46.3% ✓健康",
+          "PE 19.1 合理",
+          "PE 19.1 + ROE 24.8% 现金流充裕 ✓",
+          "市值 2173亿"
+        ],
+        "buy_sell": {
+          "current": 29.63,
+          "buy": 28.15,
+          "sell": 53.33,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "600660",
+        "name": "福耀玻璃",
+        "price": 57.68,
+        "change_pct": -0.64,
+        "pe": 16.16,
+        "pb": 4.13,
+        "roe": 25.56,
+        "gross_margin": 37.270011816932,
+        "net_margin": 20.3479325266,
+        "debt_ratio": 46.4018008554,
+        "rev_growth": 18.3669408128,
+        "profit_growth": 33.2,
+        "market_cap": 1155.32,
+        "score": 99.3,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 23,
+          "health": 20,
+          "valuation": 16,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 25.6% 优秀",
+          "净利率 20.3% ✓",
+          "成长性 25.8% 优秀",
+          "资产负债率 46.4% ✓健康",
+          "PE 16.2 合理",
+          "PE 16.2 + ROE 25.6% 现金流充裕 ✓",
+          "市值 1155亿"
+        ],
+        "buy_sell": {
+          "current": 57.68,
+          "buy": 54.8,
+          "sell": 103.82,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "603259",
+        "name": "药明康德",
+        "price": 106.19,
+        "change_pct": 2.36,
+        "pe": 16.54,
+        "pb": 5.2,
+        "roe": 28.56,
+        "gross_margin": 47.638710497092,
+        "net_margin": 42.5312288509,
+        "debt_ratio": 22.1809931508,
+        "rev_growth": 15.8371756558,
+        "profit_growth": 102.65,
+        "market_cap": 2626.38,
+        "score": 99.2,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 14,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 28.6% 优秀",
+          "毛利率 47.6% ✓",
+          "净利率 42.5% ✓",
+          "成长性 59.2% 优秀",
+          "资产负债率 22.2% ✓健康",
+          "PE 16.5 合理",
+          "PE 16.5 + ROE 28.6% 现金流充裕 ✓",
+          "市值 2626亿"
+        ],
+        "buy_sell": {
+          "current": 106.19,
+          "buy": 100.88,
+          "sell": 191.14,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "688336",
+        "name": "三生国健",
+        "price": 82.1,
+        "change_pct": -5.27,
+        "pe": 17.5,
+        "pb": 7.23,
+        "roe": 41.32,
+        "gross_margin": 92.070895330228,
+        "net_margin": 68.8681479709,
+        "debt_ratio": 6.0578084598,
+        "rev_growth": 251.8121415003,
+        "profit_growth": 311.49,
+        "market_cap": 506.38,
+        "score": 98.8,
+        "dimensions": {
+          "profitability": 35,
+          "growth": 25,
+          "health": 20,
+          "valuation": 14,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 41.3% 优秀",
+          "毛利率 92.1% ✓",
+          "净利率 68.9% ✓",
+          "成长性 281.7% 优秀",
+          "资产负债率 6.1% ✓健康",
+          "PE 17.5 合理",
+          "PE 17.5 + ROE 41.3% 现金流充裕 ✓",
+          "市值 506亿"
+        ],
+        "buy_sell": {
+          "current": 82.1,
+          "buy": 77.99,
+          "sell": 147.78,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      },
+      {
+        "code": "002801",
+        "name": "微光股份",
+        "price": 30.72,
+        "change_pct": -1.6,
+        "pe": 19.36,
+        "pb": 3.97,
+        "roe": 20.51,
+        "gross_margin": 30.295319668798,
+        "net_margin": 24.7072876444,
+        "debt_ratio": 16.4506570908,
+        "rev_growth": 4.6759705589,
+        "profit_growth": 65.22,
+        "market_cap": 35.57,
+        "score": 98.3,
+        "dimensions": {
+          "profitability": 34,
+          "growth": 25,
+          "health": 20,
+          "valuation": 15,
+          "cashflow": 5
+        },
+        "reasons": [
+          "ROE 20.5% 优秀",
+          "净利率 24.7% ✓",
+          "成长性 34.9% 优秀",
+          "资产负债率 16.5% ✓健康",
+          "PE 19.4 合理",
+          "PE 19.4 + ROE 20.5% 现金流充裕 ✓",
+          "市值 36亿"
+        ],
+        "buy_sell": {
+          "current": 30.72,
+          "buy": 29.18,
+          "sell": 55.3,
+          "upside": 80.0,
+          "downside": 5.0,
+          "recommendation": "强烈推荐",
+          "star_rating": 5
+        }
+      }
+    ],
+    "total_scanned": 996,
+    "pick_time": "2026-04-10 00:04:15",
+    "session_type": "午盘选股"
+  },
+  "last_update": "2026-04-10 00:04:15"
+}

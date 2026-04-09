@@ -1,0 +1,64 @@
+{
+  "report_time": "2026-04-10 00:39:26",
+  "backtest_period": "2025-04-10 至 2026-04-10",
+  "stock_pool_size": 15,
+  "strategies": [
+    {
+      "strategy": "低 PE 策略",
+      "performance": {
+        "initial_capital": 1000000.0,
+        "final_value": 1132390.47,
+        "total_return": 13.24,
+        "annualized_return": 20.63,
+        "sharpe_ratio": 0.85,
+        "max_drawdown": 8.09,
+        "volatility": 13.23,
+        "var_95": 1.3,
+        "win_rate": 66.67,
+        "profit_loss_ratio": 3.65,
+        "trading_days": 242,
+        "total_trades": 6,
+        "peak_date_index": 99,
+        "trough_date_index": 240
+      }
+    },
+    {
+      "strategy": "高成长策略",
+      "performance": {
+        "initial_capital": 1000000.0,
+        "final_value": 951558.3,
+        "total_return": -4.84,
+        "annualized_return": -7.22,
+        "sharpe_ratio": -0.07,
+        "max_drawdown": 25.05,
+        "volatility": 30.1,
+        "var_95": 1.72,
+        "win_rate": 50.0,
+        "profit_loss_ratio": 0.36,
+        "trading_days": 242,
+        "total_trades": 2,
+        "peak_date_index": 0,
+        "trough_date_index": 67
+      }
+    },
+    {
+      "strategy": "五维价值策略",
+      "performance": {
+        "initial_capital": 1000000.0,
+        "final_value": 1160009.1,
+        "total_return": 16.0,
+        "annualized_return": 25.09,
+        "sharpe_ratio": 0.88,
+        "max_drawdown": 9.55,
+        "volatility": 16.15,
+        "var_95": 1.28,
+        "win_rate": 66.67,
+        "profit_loss_ratio": 1.36,
+        "trading_days": 242,
+        "total_trades": 12,
+        "peak_date_index": 119,
+        "trough_date_index": 124
+      }
+    }
+  ]
+}

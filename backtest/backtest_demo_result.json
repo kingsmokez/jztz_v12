@@ -1,0 +1,46 @@
+{
+  "report_time": "2026-04-02 21:15:00",
+  "backtest_period": "2023-01-01 至 2026-04-02",
+  "initial_capital": 1000000.0,
+  "performance": {
+    "total_return": 68.5,
+    "annualized_return": 22.8,
+    "sharpe_ratio": 1.65,
+    "max_drawdown": 18.5,
+    "win_rate": 62.5,
+    "profit_loss_ratio": 2.3,
+    "volatility": 15.2,
+    "var_95": 3.8,
+    "trading_days": 780,
+    "total_trades": 45
+  },
+  "risk_analysis": {
+    "num_positions": 5,
+    "max_position_weight": 20.0,
+    "total_market_value": 1685000.0
+  },
+  "weights_v2": {
+    "profitability": 0.3,
+    "growth": 0.2,
+    "health": 0.15,
+    "valuation": 0.2,
+    "cashflow": 0.05
+  },
+  "weights_v3": {
+    "profitability": 0.4,
+    "growth": 0.3,
+    "health": 0.15,
+    "valuation": 0.2,
+    "cashflow": 0.05
+  },
+  "comparison": {
+    "v2_annualized_return": 19.4,
+    "v3_annualized_return": 22.8,
+    "v2_sharpe": 1.35,
+    "v3_sharpe": 1.65,
+    "v2_max_drawdown": 23.6,
+    "v3_max_drawdown": 18.5,
+    "v2_win_rate": 55.0,
+    "v3_win_rate": 62.5
+  }
+}

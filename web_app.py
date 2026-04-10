@@ -425,12 +425,17 @@ def get_realtime_quotes():
                         volume_gu = float(parts[37]) if parts[37] else 0
                     except:
                         volume_gu = 0
-                    
+                    try:
+                        turnover_rate = float(parts[38]) if parts[38] else 0
+                    except:
+                        turnover_rate = 0
+
                     batch_result[code] = {
                         'name': parts[1], 'price': price, 'change_pct': change_pct,
                         'volume': volume_gu, 'amount': amount_wan * 10000,
                         'market_cap': total_cap_yi * 100000000, 'pe': pe,
                         'high': high, 'low': low, 'open': open_p, 'prev_close': prev_close,
+                        'turnover_rate': turnover_rate,
                     }
             except Exception as e:
                 print(f"  腾讯API第{batch_idx//batch_size+1}批失败: {e}")
@@ -463,6 +468,7 @@ def get_realtime_quotes():
                 'net_margin': fin.get('net_margin', 0), 'debt_ratio': fin.get('debt_ratio', 0),
                 'rev_growth': fin['rev_growth'], 'profit_growth': fin['profit_growth'],
                 'market_cap': pd['market_cap'],
+                'turnover_rate': pd.get('turnover_rate', 0),
             }
             all_stocks.append(stock)
 
@@ -858,6 +864,51 @@ def evaluate_stock(stock):
         dimensions["cashflow"] = 0
         if pe <= 0 and roe <= 0:
             reasons.append("亏损企业 现金流堪忧 ⚠️")
+
+    # ===== 行情因子 (加分项，让每天结果有变化) =====
+    # 涨跌幅因子：偏好适度涨跌，避免追高和暴跌
+    change_pct = stock.get("change_pct", 0)
+    market_bonus = 0
+
+    # 涨跌幅加分逻辑
+    if -5 <= change_pct <= 3:
+        # 适度涨跌：跌5%到涨3%之间，加分
+        if change_pct < 0:
+            # 小跌可能是机会
+            market_bonus += abs(change_pct) * 0.5  # 跌越多加分越多（抄底机会）
+            reasons.append(f"回调 {change_pct:.1f}% 可能是机会")
+        else:
+            # 小涨也在合理范围
+            market_bonus += 1
+    elif 3 < change_pct <= 7:
+        # 涨幅较大，小幅加分
+        market_bonus += 0.5
+        reasons.append(f"上涨 {change_pct:.1f}%")
+    elif change_pct > 7:
+        # 涨幅过大，不加行情分（避免追高）
+        reasons.append(f"涨幅 {change_pct:.1f}% 较大 注意追高风险")
+    elif change_pct < -7:
+        # 跌幅过大，可能有问题
+        market_bonus -= 1
+        reasons.append(f"大跌 {change_pct:.1f}% 注意风险")
+
+    # 换手率因子：适度活跃更好
+    turnover_rate = stock.get("turnover_rate", 0)
+    if 1 <= turnover_rate <= 10:
+        # 换手率1-10%，适度活跃
+        market_bonus += 1.5
+    elif 10 < turnover_rate <= 20:
+        # 换手率10-20%，较活跃
+        market_bonus += 1
+    elif turnover_rate > 20:
+        # 换手率过高，可能有资金博弈
+        market_bonus += 0.5
+        reasons.append(f"换手率 {turnover_rate:.1f}% 较高")
+
+    # 加入行情加分（上限3分）
+    market_bonus = max(0, min(market_bonus, 3))
+    score += market_bonus
+
     # 市值信息（不参与评分，仅展示）
     if market_cap_yi > 0:
         reasons.append(f"市值 {market_cap_yi:.0f}亿")

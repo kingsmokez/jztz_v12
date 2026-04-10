@@ -1109,10 +1109,236 @@ def calculate_buy_sell(stock, score):
         "star_rating": star_rating,
     }
 
+# 股票所属板块映射（关键股票）
+STOCK_SECTOR_MAP = {
+    # 半导体/芯片
+    "002371": ["半导体", "芯片", "人工智能"],
+    "300661": ["半导体", "芯片"],
+    "688981": ["半导体", "芯片"],
+    "603501": ["半导体", "芯片"],
+    "002049": ["半导体", "芯片"],
+    "688332": ["半导体", "芯片"],
+    "603929": ["半导体", "芯片"],
+    "300308": ["光通信", "人工智能", "通信"],
+    "300394": ["光通信", "人工智能", "通信"],
+    # 新能源/光伏/储能/固态电池
+    "300274": ["光伏", "储能", "新能源", "固态电池"],
+    "601012": ["光伏", "新能源"],
+    "002459": ["光伏", "储能"],
+    "300014": ["锂电", "新能源", "固态电池"],
+    "002594": ["新能源汽车", "新能源", "汽车"],
+    "300750": ["锂电", "新能源", "储能", "固态电池"],
+    # 医药
+    "300015": ["医药", "医疗服务"],
+    "300760": ["医疗器械", "医药"],
+    "300122": ["医药", "生物制品"],
+    "002007": ["医疗器械", "医药"],
+    "603259": ["医药", "CXO"],
+    "600211": ["医药", "中药"],
+    "600329": ["医药", "中药"],
+    "688336": ["医药", "生物制品"],
+    # 消费电子
+    "002475": ["消费电子", "苹果", "汽车"],
+    "002241": ["消费电子", "苹果"],
+    "600588": ["人工智能", "数字经济"],
+    # 科技/AI
+    "300059": ["人工智能", "数字经济"],
+    "002230": ["人工智能", "数字经济"],
+    "002405": ["人工智能", "数字经济"],
+    "300033": ["数字经济", "证券"],
+    # 新能源汽车/汽车零部件
+    "002812": ["新能源汽车", "锂电", "钠电池"],
+    "600841": ["汽车零部件", "汽车", "新能源"],
+    # 锂矿/锂电
+    "000792": ["锂矿", "锂电", "新能源"],
+    "002466": ["锂矿", "锂电"],
+    "002460": ["锂电", "新能源"],
+    # 其他
+    "002352": ["物流"],
+    "603288": ["食品饮料", "消费"],
+    "002039": ["电力", "新能源"],
+    "600415": ["商贸", "互联金融"],
+    "600660": ["汽车零部件", "汽车"],
+    "002546": ["电力设备", "新能源"],
+    "002895": ["化工", "磷化工"],
+    "000612": ["有色金属", "铝"],
+}
+
+# 热门关键词到板块的映射（用于从新闻中识别热点）
+HOT_KEYWORD_TO_SECTOR = {
+    # 科技
+    "AI": ["人工智能", "数字经济"],
+    "ChatGPT": ["人工智能"],
+    "大模型": ["人工智能"],
+    "芯片": ["半导体", "芯片"],
+    "GPU": ["半导体"],
+    "算力": ["人工智能", "数字经济"],
+    "光模块": ["光通信", "人工智能"],
+    "半导体": ["半导体", "芯片"],
+    # 新能源
+    "光伏": ["光伏", "储能"],
+    "储能": ["储能", "新能源"],
+    "锂电池": ["锂电", "新能源"],
+    "锂电": ["锂电", "新能源"],
+    "固态电池": ["固态电池", "锂电"],
+    "钠电池": ["钠电池", "锂电"],
+    "新能源": ["新能源", "光伏"],
+    "电动车": ["新能源汽车", "汽车"],
+    "充电桩": ["新能源汽车"],
+    # 医药
+    "医药": ["医药", "医疗器械"],
+    "创新药": ["医药", "生物制品"],
+    "疫苗": ["生物制品", "医药"],
+    # 消费
+    "消费": ["消费", "食品饮料"],
+    "白酒": ["白酒", "消费"],
+    # 周期
+    "锂矿": ["锂矿", "锂电"],
+    "铝": ["有色金属"],
+    "铜": ["有色金属"],
+}
+
+def get_hot_sectors_and_news():
+    """获取当日热门板块和新闻热点关键词
+
+    返回:
+        hot_sectors: 涨幅前列的板块及其涨幅
+        hot_keywords: 新闻中频繁出现的热点关键词
+    """
+    hot_sectors = {}  # {板块名: 涨幅}
+    hot_keywords = set()  # 热点关键词集合
+
+    try:
+        # 1. 获取板块行情
+        print("  获取板块行情分析热点...")
+        industry_sectors = fetch_sina_sectors('industry')
+        concept_sectors = fetch_sina_sectors('class')
+
+        all_sectors = industry_sectors + concept_sectors
+
+        # 按涨幅排序，取前10热门板块
+        sorted_sectors = sorted(all_sectors, key=lambda x: x.get('change_pct', 0), reverse=True)
+
+        for s in sorted_sectors[:15]:  # Top 15 热门板块
+            name = s.get('name', '')
+            change = s.get('change_pct', 0)
+            if change > 0:  # 只记录上涨板块
+                hot_sectors[name] = change
+                # 同时记录相关关键词
+                for sector_name, keywords in SECTOR_KEYWORDS.items():
+                    if sector_name in name or name in sector_name:
+                        hot_keywords.update(keywords)
+
+        print(f"    热门板块: {list(hot_sectors.keys())[:5]}")
+
+        # 2. 获取新闻热点
+        try:
+            r = session.get("https://feed.mix.sina.com.cn/api/roll/get",
+                           params={"pageid": "153", "lid": "2509", "k": "", "r": "0.5", "page": 1},
+                           headers=HEADERS, timeout=10)
+            d = r.json()
+            if d.get('result') and d['result'].get('data'):
+                news_titles = [item.get('title', '') for item in d['result']['data'][:30]]
+                news_text = ' '.join(news_titles)
+
+                # 统计热点关键词出现次数
+                keyword_count = {}
+                for keyword, sectors in HOT_KEYWORD_TO_SECTOR.items():
+                    count = news_text.count(keyword)
+                    if count > 0:
+                        keyword_count[keyword] = count
+                        hot_keywords.add(keyword)
+                        # 把关键词对应的板块也加入热门
+                        for sector in sectors:
+                            if sector not in hot_sectors:
+                                hot_sectors[sector] = 0.5  # 新闻热度加分
+
+                # 按出现次数排序，取最热的10个关键词
+                top_keywords = sorted(keyword_count.items(), key=lambda x: x[1], reverse=True)[:10]
+                if top_keywords:
+                    print(f"    新闻热点: {[k[0] for k in top_keywords[:5]]}")
+
+        except Exception as e:
+            print(f"    新闻获取失败: {e}")
+
+    except Exception as e:
+        print(f"    板块数据获取失败: {e}")
+
+    return hot_sectors, hot_keywords
+
+def calculate_hot_factor(stock_code, stock_name, hot_sectors, hot_keywords):
+    """计算股票的热点因子
+
+    返回: (热点加分, 热点原因列表)
+    """
+    bonus = 0
+    reasons = []
+
+    # 1. 板块热度加分
+    stock_sectors = STOCK_SECTOR_MAP.get(stock_code, [])
+
+    # 根据股票名称推断板块
+    name_hints = {
+        "半导体": ["半导体", "芯片", "微", "创", "华创"],
+        "新能源": ["新能", "光伏", "锂电", "储能", "电源", "宁德", "比亚迪"],
+        "医药": ["医", "药", "生物", "康", "健"],
+        "科技": ["科技", "电子", "信息", "软", "通"],
+    }
+    for hint, keywords in name_hints.items():
+        if any(h in stock_name for h in keywords):
+            stock_sectors.append(hint)
+
+    # 检查股票所属板块是否在热门板块中（模糊匹配）
+    for stock_sector in stock_sectors:
+        for hot_sector, change in hot_sectors.items():
+            # 模糊匹配：板块名称包含关系
+            if stock_sector in hot_sector or hot_sector in stock_sector:
+                # 板块涨幅越大，加分越多
+                if change >= 3:
+                    bonus += 10
+                    reasons.append(f"🔥【{hot_sector}】+{change:.1f}%")
+                elif change >= 2:
+                    bonus += 6
+                    reasons.append(f"热门【{hot_sector}】+{change:.1f}%")
+                elif change >= 1:
+                    bonus += 3
+                else:
+                    bonus += 1
+                break  # 避免重复加分
+
+    # 2. 根据热门板块关键词匹配股票名称
+    # 关键词：固态电池、钠电池、AI、光伏等
+    sector_keywords = ["固态电池", "钠电池", "半导体", "芯片", "光伏", "储能", "锂电", "新能源",
+                       "人工智能", "AI", "数字经济", "机器人", "医药", "医疗", "创新药",
+                       "消费电子", "汽车", "特斯拉", "华为", "苹果"]
+
+    for keyword in sector_keywords:
+        if keyword in stock_name:
+            # 检查该关键词对应板块是否热门
+            for hot_sector, change in hot_sectors.items():
+                if keyword in hot_sector and change > 0:
+                    bonus += 5
+                    reasons.append(f"🔥{keyword}")
+                    break
+
+    # 3. 新闻热点关键词匹配
+    for keyword in hot_keywords:
+        if keyword in stock_name:
+            bonus += 3
+            reasons.append(f"热点【{keyword}】")
+
+    # 上限20分
+    bonus = min(bonus, 20)
+
+    return bonus, reasons[:3]  # 最多返回3个原因
+
 def run_picker():
-    """执行选股主流程 - 全市场扫描"""
+    """执行选股主流程 - 全市场扫描 + 热点因子"""
     print("正在获取全市场实时行情...")
     all_stocks = get_realtime_quotes()
+
+    # 获取热点板块和新闻
+    hot_sectors, hot_keywords = get_hot_sectors_and_news()
 
     if not all_stocks or len(all_stocks) < 50:
         print("⚠️ 实时行情获取失败，启用离线模式")
@@ -1235,20 +1461,37 @@ def run_picker():
     for stock in stock_pool:
         r = evaluate_stock(stock)
         if r and r["score"] >= 50:
+            # 计算热点因子
+            hot_bonus, hot_reasons = calculate_hot_factor(
+                stock.get("code", ""),
+                stock.get("name", ""),
+                hot_sectors,
+                hot_keywords
+            )
+            if hot_bonus > 0:
+                r["hot_bonus"] = hot_bonus
+                r["hot_reasons"] = hot_reasons
+                r["score"] += hot_bonus
             results.append(r)
 
-    # 动态排序：基础分数 + 实时涨跌幅微调（让排名随盘面变化）
-    # 涨幅每1%加0.3分，跌幅每1%减0.2分（变化幅度小，不影响核心评分逻辑）
+    # 动态排序：基础分数 + 热点因子 + 行情因子
+    # 综合评分 = 五维分 + 热点分 + 涨跌调整
     for r in results:
         change = r.get("change_pct", 0)
-        r["_dynamic_score"] = r["score"] + change * 0.3
+        hot = r.get("hot_bonus", 0)
+        # 涨跌幅调整：涨幅适度加分，跌幅减分
+        if change > 0:
+            change_adj = min(change * 0.5, 3)  # 涨幅最多加3分
+        else:
+            change_adj = max(change * 0.3, -2)  # 跌幅最多减2分
+        r["_final_score"] = r["score"] + change_adj
 
-    results.sort(key=lambda x: x["_dynamic_score"], reverse=True)
+    results.sort(key=lambda x: x["_final_score"], reverse=True)
 
     # 清理内部字段 + 分数四舍五入保留1位小数
     for r in results:
-        r.pop("_dynamic_score", None)
-        # 评分保留1位小数，避免过长小数点
+        r.pop("_final_score", None)
+        # 评分保留1位小数
         r["score"] = round(r["score"], 1)
         # 确保debt_ratio存在
         if "debt_ratio" not in r:
